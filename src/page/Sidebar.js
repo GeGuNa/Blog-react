@@ -18,9 +18,9 @@ return (<>
 	<h2>Site menu</h2>  
 </div>
    
-   <a href="#"><div className="aw2z12zq3">Home</div> </a> 
-   <a href="#"><div className="aw2z12zq3">About us</div> </a> 
-   <a href="#"><div className="aw2z12zq3">Contact page</div> </a> 
+   <Link to="/"><div className="aw2z12zq3">Home</div> </Link> 
+   <Link to="/About"><div className="aw2z12zq3">About us</div> </Link> 
+   <Link to="/contact"><div className="aw2z12zq3">Contact page</div> </Link> 
    <a href="#"><div className="aw2z12zq3">Users</div> </a> 
    <a href="#"><div className="aw2z12zq3">Categories</div> </a> 
    <a href="#"><div className="aw2z12zq3">Popular posts</div> </a> 
