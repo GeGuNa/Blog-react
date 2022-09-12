@@ -4,6 +4,7 @@ import { Sidebar } from './Sidebar'
 import { Header } from './Header'
 import { Righside } from './Rightside.js'
 import { Main } from './Main.js'
+import Footer from './Footer.js'
 
 
 
@@ -158,9 +159,7 @@ const { id } = useParams();
 
 
 
-<div className="footer">
-  <p>By  xuxrimuxri :D </p>
-</div>
+<Footer/>
 
 
 
