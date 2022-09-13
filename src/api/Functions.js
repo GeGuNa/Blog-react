@@ -26,6 +26,15 @@ return response2.data;
 
 }
 
+function Emailch(email){
+
+const mailCh = /^[\w-]+@[\w-]+\.[\w-]+$/g
+
+return mailCh.test(email); 
+
+}
+
+
 
 var SpecialSymbols =  {
     '<': '&lt;',
