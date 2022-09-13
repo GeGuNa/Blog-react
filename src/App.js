@@ -6,6 +6,13 @@ import Contact from './page/Contact.js'
 import About from './page/About.js'
 import Users from './page/Users.js'
 
+
+function Error_Detected(){
+return <div> Page doesn't exists </div>
+}
+
+
+
 export default function App() {
 return(
 <Routes>
@@ -15,6 +22,7 @@ return(
 <Route path="/contact" element={<Contact />} />
 <Route path="/About" element={<About />} />
 <Route path="/Users" element={<Users />} />
+<Route path="*" element={<Error_Detected />} />
 </Routes>
 )
 }
