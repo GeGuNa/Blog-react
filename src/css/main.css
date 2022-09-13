@@ -24,7 +24,38 @@ background: #0397D6;
 }
 
 
+.uslistM {
+display:flex;
+max-width:100%;
+padding-bottom:5px;
+}
 
+.uslistM11 {
+color:#000;
+}
+
+.NickNmClor {
+color:#1296ce;
+}
+
+.NickNmClor:hover {
+color:#ffaaff;
+}
+
+
+.uslists > img {
+width:50px;
+}
+
+.uslists33t {
+display:table;
+}
+
+.uslists {
+padding-left:5px;
+flex-direction:column;
+align-self: center;
+}
 
 .a1a4 {
 width: 100%;display: flex;flex: 1;position: relative;

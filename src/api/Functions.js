@@ -35,6 +35,15 @@ return mailCh.test(email);
 }
 
 
+function ifItsImage(name) {
+
+const Tpimage = /^(jpg|jpeg|png|gif|webp)+$/
+
+return Tpimage.test(name);
+
+}
+
+
 
 var SpecialSymbols =  {
     '<': '&lt;',
