@@ -6,6 +6,7 @@ import { Righside } from './Rightside.js'
 import { Main } from './Main.js'
 import Footer from './Footer.js'
 import { Mainlist } from '../api/Functions.js'
+import moment from 'moment'
 
 
 export default function Home() {
@@ -56,7 +57,7 @@ console.log(Pdata)
    <img src={`/img/${val.id}.jpg`}/>
    
    <div className="pstq_d cqwzzz"> {val.title} </div>
-   <div className="pstq_d crw111"> JAN 20, 2022 </div>
+   <div className="pstq_d crw111"> {moment(parseInt(val.when_posted)).format('ll')} </div>
    <div className="pstq_de"><Link to={`/post/${val.id}`}>Detailed ....</Link> </div>
       
    </div>	 

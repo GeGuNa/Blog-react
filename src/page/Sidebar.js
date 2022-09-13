@@ -1,8 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Randomposts } from '../api/Functions.js'
+import moment from 'moment'
 
 
 export function Sidebar(){
+
+const [DataOfRandomPosts, SetDataOfRandomPosts] = React.useState({status:'failed'})
+
+
+React.useEffect(()=> {
+
+
+async function Data(){
+
+const Qzd124 = await Randomposts()
+
+SetDataOfRandomPosts(Qzd124)
+}
+
+Data()
+
+},[SetDataOfRandomPosts])
+
+
 
 return (<>
 
@@ -25,89 +46,30 @@ return (<>
    <a href="#"><div className="aw2z12zq3">Categories</div> </a> 
    <a href="#"><div className="aw2z12zq3">Popular posts</div> </a> 
 
-  
+
+
   <div className="aside22" style={{marginTop: '20px'}}>
       <h2>Random post</h2>  
     </div>
   
-  <div className="aside123">
+{DataOfRandomPosts.status !== 'failed' && DataOfRandomPosts.map((val,index)=>
+  <div className="aside123" key={index}>
     
      <span>
-    <img src="/img/news-110x110-1.jpg" style={{width: '50px'}} width="50"/>
+    <img src={`/img/${val.id}.jpg`} style={{width: '50px'}} width="50"/>
     </span>
     
 
     <span>
-    qweqweqwe<br/>
-    qweqweqwe
+   <Link className="qwzqdq22" to={`/post/${val.id}`}>{val.title}</Link><br/>
+    {moment(parseInt(val.when_posted)).format('ll')}
     </span>
     </div>
-    
-    <div className="aside123">
-    
-     <span>
-    <img src="/img/news-110x110-1.jpg" style={{width: '50px'}} width="50"/>
-    </span>
-    
 
-    <span>
-    qweqweqwe<br/>
-    qweqweqwe
-    </span>
-    </div>
-    
-    <div className="aside123">
-    
-     <span>
-    <img src="/img/news-110x110-1.jpg" style={{width: '50px'}} width="50"/>
-    </span>
-    
+)}
+  
 
-    <span>
-    qweqweqwe<br/>
-    qweqweqwe
-    </span>
-    </div>
-    
-    <div className="aside123">
-    
-     <span>
-    <img src="/img/news-110x110-1.jpg" style={{width: '50px'}} width="50"/>
-    </span>
-    
-
-    <span>
-    qweqweqwe<br/>
-    qweqweqwe
-    </span>
-    </div>
-    
-    
-    <div className="aside123">
-    
-     <span>
-    <img src="/img/news-110x110-1.jpg" style={{width: '50px'}} width="50"/>
-    </span>
-    
-
-    <span>
-    qweqweqwe<br/>
-    qweqweqwe
-    </span>
-    </div>
-    
-    <div className="aside123">
-    
-     <span>
-    <img src="/img/news-110x110-1.jpg" style={{width: '50px'}} width="50"/>
-    </span>
-    
-
-    <span>
-    qweqweqwe<br/>
-    qweqweqwe
-    </span>
-    </div>
+   
   
   
   </div> 
