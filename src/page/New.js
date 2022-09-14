@@ -46,7 +46,7 @@ e.preventDefault();
 
   <div className="cdiv">
     <label> Title </label>
-  <input type="text" maxLength={128} className="csinpt" placeholder="Email or Nickname"/>
+  <input type="text" maxLength={128} className="csinpt" placeholder="Name of a blog"/>
   
    </div>
    
