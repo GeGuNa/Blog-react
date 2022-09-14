@@ -42,10 +42,29 @@ return (<>
    <Link to="/"><div className="aw2z12zq3">Home</div> </Link> 
    <Link to="/About"><div className="aw2z12zq3">About us</div> </Link> 
    <Link to="/contact"><div className="aw2z12zq3">Contact page</div> </Link> 
-  <Link to="/users"> <div className="aw2z12zq3">Users</div> </Link>  
-    <Link to="/login"> <div className="aw2z12zq3">Login</div> </Link>  
-   <a href="#"><div className="aw2z12zq3">Categories</div> </a> 
-   <a href="#"><div className="aw2z12zq3">Popular posts</div> </a> 
+   <Link to="/users"> <div className="aw2z12zq3">Users</div> </Link>  
+   <Link to="/login"> <div className="aw2z12zq3">Login</div> </Link>  
+   <Link to="/popular"> <div className="aw2z12zq3">Popular blogs</div> </Link>  
+
+<div className="aside22" style={{marginTop:'25px'}}>
+	<h2>Categories</h2>  
+</div>
+   
+   <Link to="/"><div className="aw2z12zq3">Politics</div> </Link> 
+   <Link to="/"><div className="aw2z12zq3">Science</div> </Link> 
+   <Link to="/"><div className="aw2z12zq3">World</div> </Link> 
+   <Link to="/"> <div className="aw2z12zq3">Societies</div> </Link>  
+   <Link to="/"> <div className="aw2z12zq3">Law</div> </Link>  
+   <Link to="/"><div className="aw2z12zq3">Culinary / kitchen</div> </Link> 
+   <Link to="/"><div className="aw2z12zq3">Technologies</div> </Link> 
+   <Link to="/"><div className="aw2z12zq3">Programming</div> </Link> 
+   <Link to="/"><div className="aw2z12zq3">Sport</div> </Link>  
+   <Link to="/"><div className="aw2z12zq3">Culture / Art</div> </Link> 
+
+
+
+
+
 
 
 
