@@ -1,3 +1,35 @@
+
+.pagination { 
+  padding:10px;
+  max-width:50%;
+  display: inline-block;
+}
+
+.pagination a {
+  color: #0260b3;
+  float: left;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+html, body {
+font-family:Verdana, sans-serif;
+font-size:15px;
+line-height:1.5;
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -8,6 +40,23 @@ padding: 0px;
 .qwzqdq22 {
 color: #000;
 font-weight: 500;
+}
+
+.cfrm {
+margin:auto;
+width:100%;
+}
+
+.cfrm > form {
+
+}
+
+.mmauto {
+margin: auto;
+}
+
+.mhalf {
+    max-width: 50%;
 }
 
 .a1a2 {
