@@ -7,6 +7,7 @@ import About from './page/About.js'
 import Users from './page/Users.js'
 import Login from './page/Login.js'
 import Categories from './page/Categories.js'
+import Newpost from './page/New.js'
 
 
 function Error_Detected(){
@@ -26,6 +27,7 @@ return (
 <Route path="/Users" element={<Users />} />
 <Route path="/Login" element={<Login />} />
 <Route path="/Cats/:cid" element={<Categories />} />
+<Route path="/New_post" element={<Newpost />} />
 <Route path="*" element={<Error_Detected />} />
 </Routes>
 )

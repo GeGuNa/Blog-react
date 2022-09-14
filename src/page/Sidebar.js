@@ -45,6 +45,9 @@ return (<>
    <Link to="/users"> <div className="aw2z12zq3">Users</div> </Link>  
    <Link to="/login"> <div className="aw2z12zq3">Login</div> </Link>  
    <Link to="/popular"> <div className="aw2z12zq3">Popular blogs</div> </Link>  
+   <Link to="/New_post"> <div className="aw2z12zq3">New post</div> </Link>  
+
+
 
 <div className="aside22" style={{marginTop:'25px'}}>
 	<h2>Categories</h2>  

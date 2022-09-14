@@ -5,6 +5,12 @@
   display: inline-block;
 }
 
+textarea {
+width:100%;
+display:block;
+resize:none;
+}
+
 .pagination a {
   color: #0260b3;
   float: left;
@@ -29,6 +35,11 @@ font-size:15px;
 line-height:1.5;
 }
 
+input[type="file"] {
+display:block;
+border:1px solid #000;
+width:100%;
+}
 
 * {
   box-sizing: border-box;

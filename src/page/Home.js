@@ -22,14 +22,10 @@ const qd1 = await Mainlist();
 	setPdata(qd1)
 }	
 	
-	
-	qdata();
+qdata();
 	
 }, [setPdata]);	
-	
-	
-	
-console.log(Pdata)	
+
 	
   return (<>
 
