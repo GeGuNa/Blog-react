@@ -5,15 +5,37 @@ import { Header } from './Header'
 import { Righside } from './Rightside.js'
 import { Main } from './Main.js'
 import Footer from './Footer.js'
+import { Is_Num } from '../api/Functions.js'
 
 
 
 
 export default function Post() {
 
-const { id } = useParams();
+const pgprm = useParams();
 
-  return (<>
+const id = pgprm.id
+
+if (Is_Num(id) === false) {
+
+return <div> uups something went wrong </div>
+
+} else {
+
+return <Post_view id={id}/>
+
+}
+
+
+}
+
+
+function Post_view(props) {
+
+const id = props.id;
+  
+ 
+return (<>
 
 
 <div className="row">

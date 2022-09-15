@@ -44,6 +44,15 @@ return Tpimage.test(name);
 }
 
 
+export function Is_Num(num) {
+
+if (num[0] == 0)return false;
+
+const qid = /[0-9]+/g
+
+return qid.test(num)
+}
+
 
 var SpecialSymbols =  {
     '<': '&lt;',

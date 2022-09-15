@@ -5,12 +5,34 @@ import { Header } from './Header'
 import { Righside } from './Rightside.js'
 import { Main } from './Main.js'
 import Footer from './Footer.js'
-
+import { Is_Num } from '../api/Functions.js'
 
 
 export default function Categories() {
 
-const { cid } = useParams();
+const pgprm = useParams();
+
+const id = pgprm.cid
+
+if (Is_Num(id) === false) {
+
+return <div> uups something went wrong </div>
+
+} else {
+
+return <Category id={id}/>
+
+}
+
+
+}
+
+
+
+
+function Category(props) {
+
+const id = props.id
 
 
   return (<>
