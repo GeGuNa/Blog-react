@@ -1,7 +1,7 @@
 
 # Backend side 
 
-you can see back end  for this [there](https://github.com/GeGuNa/Blog-react-app-backendp) 
+you can see back end  for this [there](https://github.com/GeGuNa/Blog-react-app-backend) 
 
 
 # Project Status
