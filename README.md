@@ -1,4 +1,9 @@
 
+# Backend side 
+
+you can see back end  for this [there](https://github.com/GeGuNa/Blog-react-app-backendp) 
+
+
 # Project Status
 
 Uncompleted, just first steps were taken
