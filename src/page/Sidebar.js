@@ -1,27 +1,31 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Randomposts } from '../api/Functions.js'
+import { Randomposts, Catlist } from '../api/Functions.js'
 import moment from 'moment'
 
 
 export function Sidebar(){
 
 const [DataOfRandomPosts, SetDataOfRandomPosts] = React.useState({status:'failed'})
+const [CatListd, SetCatList] = React.useState({status:'failed'})
 
 
-React.useEffect(()=> {
+React.useEffect(() => {
 
 
 async function Data(){
 
 const Qzd124 = await Randomposts()
-
 SetDataOfRandomPosts(Qzd124)
+
+const Qzd1244 = await Catlist()
+SetCatList(Qzd1244)
+
 }
 
 Data()
 
-},[SetDataOfRandomPosts])
+},[SetDataOfRandomPosts, SetCatList])
 
 
 
@@ -53,18 +57,15 @@ return (<>
 	<h2>Categories</h2>  
 </div>
    
-   <Link to="/"><div className="aw2z12zq3">Politics</div> </Link> 
-   <Link to="/"><div className="aw2z12zq3">Science</div> </Link> 
-   <Link to="/"><div className="aw2z12zq3">World</div> </Link> 
-   <Link to="/"> <div className="aw2z12zq3">Societies</div> </Link>  
-   <Link to="/"> <div className="aw2z12zq3">Law</div> </Link>  
-   <Link to="/"><div className="aw2z12zq3">Culinary / kitchen</div> </Link> 
-   <Link to="/"><div className="aw2z12zq3">Technologies</div> </Link> 
-   <Link to="/"><div className="aw2z12zq3">Programming</div> </Link> 
-   <Link to="/"><div className="aw2z12zq3">Sport</div> </Link>  
-   <Link to="/"><div className="aw2z12zq3">Culture / Art</div> </Link> 
-
-
+   
+   
+   {CatListd.status !== 'failed' && CatListd.map((val,index) =>
+   <span key={index}>
+    <Link to={`/Cats/${val.id}`}><div className="aw2z12zq3">{val.name}</div> </Link> 
+    </span>
+   )}
+   
+  
 
 
 

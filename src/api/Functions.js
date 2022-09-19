@@ -1,5 +1,23 @@
 import { ajax } from './axios.js'
 
+export async function Catlist() {
+
+const response2 = await ajax.get('/cat');
+
+return response2.data;
+
+}
+
+
+export async function CatlistPdt2(id) {
+
+const response2 = await ajax.get(`/cat/${id}`);
+
+return response2.data;
+
+}
+
+
 
 export async function Mainlist() {
 

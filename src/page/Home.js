@@ -7,7 +7,7 @@ import { Main } from './Main.js'
 import Footer from './Footer.js'
 import { Mainlist } from '../api/Functions.js'
 import moment from 'moment'
-
+import { Api_url } from '../api/env.js'
 
 export default function Home() {
 	
@@ -50,7 +50,7 @@ qdata();
    <div className="pstq" key={index}>
    
    <div className="psztq22"> Travel </div>
-   <img src={`/img/${val.id}.jpg`}/>
+   <img src={`${Api_url}/${val.fileaddr}`}/>
    
    <div className="pstq_d cqwzzz"> {val.title} </div>
    <div className="pstq_d crw111"> {moment(parseInt(val.when_posted)).format('ll')} </div>

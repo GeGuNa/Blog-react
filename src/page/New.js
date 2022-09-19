@@ -6,7 +6,7 @@ import { Righside } from './Rightside.js'
 import { Main } from './Main.js'
 import Footer from './Footer.js'
 import { ajax } from '../api/axios.js'
-
+import { Catlist } from '../api/Functions.js'
 
 
 export default function Newpost() {
@@ -16,11 +16,33 @@ const [Title, setTitle] = React.useState("")
 const [Message, setMessage] = React.useState("")	
 const [FileU, setFileU] = React.useState("")	
 const [Statusof, setStatusof] = React.useState("")	
-			
-
+const [CatId2, SetCatId2] = React.useState("")	
+		
+		
+		
+const ChooseCat = (e) => SetCatId2(e.target.value)
 const tsettitle = (e) => setTitle(e.target.value)
 const tmessage1 = (e) => setMessage(e.target.value)		
 const tsetFile = (e) => setFileU(e.target.files[0])
+
+const [CatListd, SetCatList] = React.useState({status:'failed'})
+
+
+React.useEffect(() => {
+
+async function Data(){
+
+const Qzd1244 = await Catlist()
+SetCatList(Qzd1244)
+
+}
+
+Data()
+
+},[SetCatList])
+
+
+
 
 
 function onsubmit(e) {
@@ -32,6 +54,9 @@ console.log(FileU)
 if (Title.length == 0)setStatusof('Title cannot be empty')
 else if (Message.length == 0)setStatusof('Description cannot be empty')
 else if (FileU.length == 0)setStatusof('File must be picked up')
+else if (CatId2.length == 0)setStatusof(`Choose category`)
+
+
 else {
 	
 setStatusof('Its processing, please wait')	
@@ -40,6 +65,10 @@ const Fdata = new FormData();
 Fdata.append('foto', FileU, FileU.name);
 Fdata.append('title', Title);
 Fdata.append('desc', Message);	
+Fdata.append('catid', CatId2);	
+
+
+
 
 ajax({
 method: 'post',
@@ -105,6 +134,18 @@ e.preventDefault();
   <input type="text" maxLength={128} onInput={tsettitle} className="csinpt" placeholder="Name of a blog"/>
   
    </div>
+   
+   
+   
+	<div className="cdiv">
+    <label className="csqqwe"> Category </label>
+    <select className="csinpt mw1150" onChange={ChooseCat} defaultValue={""}>
+    <option value="">Select category</option>
+   {CatListd.status !== 'failed' && CatListd.map((val,index) =>
+ 	<option value={val.id} key={index}>{val.name}</option>
+   )}
+   </select>
+      </div>
    
    <div className="cdiv">
     <label> Photo </label>
