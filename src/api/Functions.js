@@ -1,5 +1,15 @@
 import { ajax } from './axios.js'
 
+export async function Post_details(id) {
+
+const response2 = await ajax.get('/post/'+id);
+
+return response2.data;
+
+}
+
+
+
 export async function Catlist() {
 
 const response2 = await ajax.get('/cat');

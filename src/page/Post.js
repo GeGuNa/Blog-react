@@ -1,14 +1,13 @@
-import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import { Sidebar } from './Sidebar'
 import { Header } from './Header'
 import { Righside } from './Rightside.js'
 import { Main } from './Main.js'
 import Footer from './Footer.js'
-import { Is_Num } from '../api/Functions.js'
-
-
-
+import { Is_Num, Post_details } from '../api/Functions.js'
+import moment from 'moment'
+import { Api_url } from '../api/env.js'
 
 export default function Post() {
 
@@ -33,8 +32,40 @@ return <Post_view id={id}/>
 function Post_view(props) {
 
 const id = props.id;
-  
+var imglnk = '';
+const [dataf, setdataf] = React.useState({status:'unknown'}) 
+
+
+const Qloc = useNavigate() 
  
+ 
+useEffect(() => {
+
+
+async function fetchdata(){
+
+const qdata = await Post_details(id)
+
+setdataf(qdata)
+}
+
+fetchdata()
+
+}, [id, setdataf])  
+ 
+
+if (dataf.status!=='failed' && dataf.status === 'error_post'){
+return Qloc('/')
+} 
+
+
+if (dataf.status!=='unknown') {
+imglnk = `${Api_url}/${dataf[0].fileaddr}`
+} else {
+imglnk = ''
+}
+
+
 return (<>
 
 
@@ -54,33 +85,21 @@ return (<>
    <div className="post_bl">
    
 	<div className="post_bl222">
-     	<img src="/img/685cab7a5e6de45a38cad021ec80eb14.jpeg" className="a1a3"/>
+	
+	
+	 <img src={dataf.status!=='unknown' && imglnk } className="a1a3"/>
+	
+	 
+  
    </div>
-<div className="pstq_d a1a2"> qweqweqwe </div>
-   <div className="pstq_d crw111"> JAN 20, 2022 </div>
+<div className="pstq_d a1a2">  {dataf.status!=='unknown' && (<span>{dataf[0].title}</span>)}
+ </div>
+   <div className="pstq_d crw111"> {dataf.status!=='unknown' && moment(parseInt(dataf[0].when_posted)).format('ll')} </div>
    
    <div className="pstq_d">
    
    
-   ხარკოვის ოლქში, ოკუპანტებისგან გათავისუფლებულ ქალაქ ბალაკლეიაში უკრაინის დროშა აღმართეს, – ამის შესახებ ხარკოვის საოლქო-სამხედრო ადმინისტრაციის ხელმძღვანელი, ოლეგ სინეგუბოვი „ტელეგრამში“ წერს.
-
-„დღეს, სამხედროებმა, უკრაინის შეიარაღებული ძალების სახმელეთო ჯარების მეთაურის ალექსანდრ სირსკის ხელმძღვანელობით, უკრაინის დროშა აღმართეს“, – წერს სინეგუბოვი.
-
-
-ხარკოვის ოლქში, ოკუპანტებისგან გათავისუფლებულ ქალაქ ბალაკლეიაში უკრაინის დროშა აღმართეს, – ამის შესახებ ხარკოვის საოლქო-სამხედრო ადმინისტრაციის ხელმძღვანელი, ოლეგ სინეგუბოვი „ტელეგრამში“ წერს.
-
-„დღეს, სამხედროებმა, უკრაინის შეიარაღებული ძალების სახმელეთო ჯარების მეთაურის ალექსანდრ სირსკის ხელმძღვანელობით, უკრაინის დროშა აღმართეს“, – წერს სინეგუბოვი.
-
-
-ხარკოვის ოლქში, ოკუპანტებისგან გათავისუფლებულ ქალაქ ბალაკლეიაში უკრაინის დროშა აღმართეს, – ამის შესახებ ხარკოვის საოლქო-სამხედრო ადმინისტრაციის ხელმძღვანელი, ოლეგ სინეგუბოვი „ტელეგრამში“ წერს.
-
-„დღეს, სამხედროებმა, უკრაინის შეიარაღებული ძალების სახმელეთო ჯარების მეთაურის ალექსანდრ სირსკის ხელმძღვანელობით, უკრაინის დროშა აღმართეს“, – წერს სინეგუბოვი.
-
-
-ხარკოვის ოლქში, ოკუპანტებისგან გათავისუფლებულ ქალაქ ბალაკლეიაში უკრაინის დროშა აღმართეს, – ამის შესახებ ხარკოვის საოლქო-სამხედრო ადმინისტრაციის ხელმძღვანელი, ოლეგ სინეგუბოვი „ტელეგრამში“ წერს.
-
-„დღეს, სამხედროებმა, უკრაინის შეიარაღებული ძალების სახმელეთო ჯარების მეთაურის ალექსანდრ სირსკის ხელმძღვანელობით, უკრაინის დროშა აღმართეს“, – წერს სინეგუბოვი.
-
+  {dataf.status!=='unknown' && (<span>{dataf[0].message}</span>)}
 
    
    
